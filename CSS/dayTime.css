@@ -82,10 +82,10 @@ h4 {
   pointer-events: none;
 }
 
-.container {
+.container-fluid {
   display: grid;
   align-items: center;
-  width: 100%;
+  width: 80%;
   height: 100%;
   grid-gap: 15px;
   justify-content: center;
@@ -139,7 +139,7 @@ h4 {
   z-index: 1000;
 }
 
-.upBtn:hover{
+.upBtn:hover {
   box-shadow: 0 0 3px black;
 }
 
@@ -181,8 +181,8 @@ h4 {
 
 #mySidenav a i {
   color: black;
-  margin-right: 30px; /* Adjust the spacing between the icon and the text */
-  justify-self: flex-start; /* Justify the icon to the right */
+  margin-right: 30px;
+  justify-self: flex-start;
 }
 
 #home {
@@ -224,7 +224,7 @@ h4 {
 .rps {
   font-size: 80px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   color: black;
   opacity: 0.5;
@@ -264,17 +264,19 @@ h4 {
 
 .choices {
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
   margin-top: 20px;
   padding: 5px;
 }
 
-#player i, #computer i {
+#player i,
+#computer i {
   font-size: 200px;
 }
 
-#player, #computer {
+#player,
+#computer {
   display: flex;
   position: fixed;
 }
@@ -291,7 +293,7 @@ h4 {
 }
 
 .gameBoard.start #player {
-  transform-origin: center; 
+  transform-origin: center;
   animation: playerShake 0.7s ease infinite;
 }
 
@@ -309,5 +311,132 @@ h4 {
 @keyframes computerShake {
   50% {
     transform: rotate(-10deg) scaleX(-1);
+  }
+}
+
+/* Media queries for 480-900px screens */
+
+@media (min-width: 480px) and (max-width: 900px) {
+  .container-fluid {
+    max-width: 100%;
+  }
+
+  .face {
+    width: 30%;
+    height: 30%;
+  }
+
+  h1,
+  .rps,
+  #action
+  {
+    font-size: 48px;
+  }
+
+  h3,
+  .result {
+    font-size: 28px;
+  }
+
+  h4,
+  #gameTitle {
+    font-size: 20px;
+  }
+
+  #player i,
+  #computer i {
+    font-size: 72px;
+  }
+
+  .card {
+    margin: 5px;
+  }
+
+  .result {
+    padding-bottom: 20px;
+  }
+
+  #action {
+    height: 50%;
+  }
+
+  #centered-column1 .card-body,
+  #centered-column2 .card-body,
+  #centered-column3 .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+  }
+
+  #centered-column1,
+  #centered-column2,
+  #centered-column3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+  }
+
+  .skills {
+    margin-bottom: 5px;
+    width: 50%;
+  }
+
+  #nightDayBtn,
+  .upBtn {
+    font-size: 20px;
+    border: 2px solid #867070;
+  }
+
+  .gameBoard {
+    max-width: 100%;
+    height: 500px;
+    margin: 0 auto;
+  }
+
+  #nightDayBtn {
+    display: none;
+  }
+
+  #mySidenav {
+    height: 50%;
+  }
+
+  #mySidenav a {
+    font-size: 16px;
+    right: -165px;
+  }
+
+  #home {
+    top: 2px;
+  }
+
+  #portfolio {
+    top: 48px;
+  }
+
+  #skills {
+    top: 94px;
+  }
+
+  #game {
+    top: 140px;
+  }
+
+  #contact {
+    top: 186px;
+  }
+
+  .item4 {
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  .skills {
+    width: 50%;
+    justify-content: center;
+    align-items: center;
   }
 }
